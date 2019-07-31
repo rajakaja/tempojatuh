@@ -1,4 +1,5 @@
 <?php
+    require "notif.php";
     $data = $class_pangkat->all();
 ?>
 <h3>Input data baru</h3>

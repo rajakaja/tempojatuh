@@ -8,9 +8,6 @@
                         <li>
                             <a href="?p=naik_pangkat"><i class="fa fa-table fa-fw"></i> Data</a>
                         </li>
-
-
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
