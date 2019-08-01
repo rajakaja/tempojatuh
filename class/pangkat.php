@@ -9,7 +9,7 @@
         }
 
         public function dataNaik() {
-            $sql = "SELECT id FROM pangkat";
+            $sql = "SELECT id FROM barang";
             $ps = $this->koneksi->prepare($sql);
             $ps->execute();
             $res = $ps->rowcount();
@@ -17,7 +17,7 @@
         }
 
         public function all() {
-            $sql = "SELECT * FROM pangkat";
+            $sql = "SELECT * FROM barang";
             $ps = $this->koneksi->prepare($sql);
             $ps->execute();
             $res = $ps->fetchAll();
@@ -25,7 +25,7 @@
         }
 
         public function jumlahNaik() { 
-            $sql = "SELECT * FROM view_pangkat WHERE selisih <=7";
+            $sql = "SELECT * FROM view_barang WHERE selisih <=7";
             $ps = $this->koneksi->prepare($sql);
             $ps->execute();
             $res = $ps->fetchAll();

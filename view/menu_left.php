@@ -8,6 +8,9 @@
                         <li>
                             <a href="?p=naik_pangkat"><i class="fa fa-table fa-fw"></i> Data</a>
                         </li>
+                        <li>
+                            <a href="?p=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

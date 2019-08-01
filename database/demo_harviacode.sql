@@ -25,36 +25,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pangkat`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `pangkat` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `nip` varchar(20) NOT NULL,
-  `jatuh_tempo` date NOT NULL
+  `username` varchar(20) NOT NULL,
+  `password` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pangkat`
+-- Dumping data for table `barang`
 --
 
-INSERT INTO `pangkat` (`id`, `nama`, `nip`, `jatuh_tempo`) VALUES
-(1, 'Mas Admin', '198001022000021001', '2019-09-30'),
-(2, 'Mas Kuncung', '198001022000021002', '2019-10-15'),
-(3, 'Mas Sugeng', '198001022000021003', '2019-08-05'),
-(4, 'yanis', '195410111980031004', '2019-08-07');
+INSERT INTO `users` (`id`, `nama`, `username`, `password`) VALUES
+(1,'lutfi', 'lutfi', '12345678'),
+(1,'raffa', 'raffa', '12345678');
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `view_pangkat`
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `id` int(11) NOT NULL,
+  `nama_barang` varchar(100) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jatuh_tempo` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id`, `kode_barang`, `nama_barang`, `jatuh_tempo`) VALUES
+(1,'KB-001', 'Kulkas', '2019-09-30'),
+(2,'KB-002', 'TV', '2019-10-15'),
+(3,'KB-003', 'Kompor', '2019-08-05'),
+(4,'KB-004', 'Motor', '2019-08-07');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_barang`
 -- (See below for the actual view)
 --
-CREATE TABLE `view_pangkat` (
+CREATE TABLE `view_barang` (
 `id` int(11)
-,`nama` varchar(100)
-,`nip` varchar(20)
+,`kode_barang` varchar(20)
+,`nama_barang` varchar(100)
 ,`jatuh_tempo` date
 ,`selisih` int(7)
 );
@@ -62,20 +83,20 @@ CREATE TABLE `view_pangkat` (
 -- --------------------------------------------------------
 
 --
--- Structure for view `view_pangkat`
+-- Structure for view `view_barang`
 --
-DROP TABLE IF EXISTS `view_pangkat`;
+DROP TABLE IF EXISTS `view_barang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_pangkat`  AS  select `pangkat`.`id` AS `id`,`pangkat`.`nama` AS `nama`,`pangkat`.`nip` AS `nip`,`pangkat`.`jatuh_tempo` AS `jatuh_tempo`,to_days(`pangkat`.`jatuh_tempo`) - to_days(current_timestamp()) AS `selisih` from `pangkat` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_barang`  AS  select `barang`.`id` AS `id`,`barang`.`nama_barang` AS `nama_barang`,`barang`.`kode_barang` AS `kode_barang`,`barang`.`jatuh_tempo` AS `jatuh_tempo`,to_days(`barang`.`jatuh_tempo`) - to_days(current_timestamp()) AS `selisih` from `barang` ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `pangkat`
+-- Indexes for table `barang`
 --
-ALTER TABLE `pangkat`
+ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -83,9 +104,9 @@ ALTER TABLE `pangkat`
 --
 
 --
--- AUTO_INCREMENT for table `pangkat`
+-- AUTO_INCREMENT for table `barang`
 --
-ALTER TABLE `pangkat`
+ALTER TABLE `barang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 

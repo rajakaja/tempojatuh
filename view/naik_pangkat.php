@@ -5,18 +5,13 @@
 <h3>Input data baru</h3>
 <form action="view/input_aksi.php" method="post">
     <div class="form-group">
-        <label>Nama</label>
-        <input class="form-control" name="nama" type="text" placeholder="masukkan daftar tagihan">
+        <label>Nama Barang</label>
+        <input class="form-control" name="nama" type="text" placeholder="Nama Barang">
     </div>
 
     <div class="form-group">
-        <label>NIP</label>
-        <input class="form-control" type="number" name="nip" placeholder="masukkan nip">
-    </div class="form-group">
-
-    <div class="form-group">
         <label>Tanggal Jatuh Tempo</label>
-        <input class="form-control" type="date" name="tempo" placeholder="masukkan tanggal">
+        <input class="form-control" type="date" name="tempo">
     </div class="form-group">
 
     <div class="form-group">
@@ -36,7 +31,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>NIP</th>
+                            <th>Kode Barang</th>
                             <th>Nama</th>
                             <th>Tanggal Jatuh Tempo Tagihan</th>
                             <th>Action</th>
@@ -49,8 +44,8 @@
                                 echo '
                                 <tr class="odd gradeX">
                                     <td>'.$no.'</td>
-                                    <td>'.$d['nip'].'</td>
-                                    <td>'.$d['nama'].'</td>
+                                    <td>'.$d['kode_barang'].'</td>
+                                    <td>'.$d['nama_barang'].'</td>
                                     <td>'.$d['jatuh_tempo'].'</td>
                                     <td><a class="btn btn-danger" href="view/delete.php?id='.$d['id'].'">Hapus</a></td>
                                 </tr>';

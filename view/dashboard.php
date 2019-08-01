@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge"><?php echo $jumlah; ?></div>
-                        <div>NAMA BARANG</div>
+                        <div>BARANG</div>
                     </div>
                 </div>
             </div>

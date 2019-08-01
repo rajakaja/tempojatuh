@@ -1,7 +1,7 @@
 <?
 require '../config.php';
 $id = $_GET['id'];
-$sql = "DELETE FROM pangkat WHERE id=$id";
+$sql = "DELETE FROM barang WHERE id=$id";
 if (mysqli_query($dbconnect, $sql)) {
     echo "Record delete successfully";
 } else {

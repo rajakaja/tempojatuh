@@ -2,6 +2,9 @@
 
     ini_set('display_errors', 0);
     session_start();
+        if($_SESSION['status']!="login"){
+            header("location:login.php?pesan=belum_login");
+        }
     
     $p=$_GET['p'];
 

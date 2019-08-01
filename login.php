@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/image/costum.css">
     <?php 
     session_start();
-    if (isset($_SESSION['login'])){
+    if (isset($_SESSION['status'])){
       header('location:index.php');
     } 
     ?>

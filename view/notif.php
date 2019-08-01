@@ -1,5 +1,6 @@
 <?php
     $data = $class_pangkat->jumlahNaik();
+    if($data){
 ?>
 <div class="row">
     <div class="modal fade" id="myModal" role="dialog">
@@ -14,7 +15,13 @@
                 <div class="modal-body">
                     <?
                         foreach($data as $d){
-                            echo $d['nama']. " akan jatuh tempo pada " . $d['selisih'] ." hari lagi<br>";
+                            if($d['selisih'] >= 1){
+                                echo $d['nama_barang']. " akan jatuh tempo pada " . $d['selisih'] ." hari lagi<br>";
+                            }elseif($d['selisih'] == 0){
+                                echo $d['nama_barang']. " akan jatuh tempo pada <b>hari ini</b><br>";
+                            }else{
+                                echo $d['nama_barang']. " sudah <b>lewat</b> " . abs($d['selisih']) ." hari<br>";
+                            }
                         }
                     ?>
                 </div>
@@ -25,6 +32,7 @@
 
         </div>
     </div>
+<? } ?>
     <script type="text/javascript">
         $(window).load(function () {
             $('#myModal').modal('show');
