@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` date NOT NULL
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`) VALUES
 (1,'lutfi', 'lutfi', '12345678'),
-(1,'raffa', 'raffa', '12345678');
+(2,'raffa', 'raffa', '12345678');
 
 -- --------------------------------------------------------
 
