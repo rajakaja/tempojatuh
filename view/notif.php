@@ -21,22 +21,22 @@
                             $minggu = $d['selisih'] - 2;
                             if($day == "Saturday"){
                                 if ($sabtu == 0) {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
+                                    echo $d['nama_barang']. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $sabtu ." hari lagi<br>";
+                                    echo $d['nama_barang']. " akan jatuh tempo pada " . $sabtu ." hari lagi<br>";
                                 }
                             }elseif($day == "Sunday"){
                                 if ($minggu == 0) {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
+                                    echo $d['nama_barang']. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $minggu ." hari lagi<br>";
+                                    echo $d['nama_barang']. " akan jatuh tempo pada " . $minggu ." hari lagi<br>";
                                 }
                             }elseif($d['selisih'] >= 1){
-                                echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $d['selisih'] ." hari lagi<br>";
+                                echo $d['nama_barang']. " akan jatuh tempo pada " . $d['selisih'] ." hari lagi<br>";
                             }elseif($d['selisih'] == 0){
-                                echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
+                                echo $d['nama_barang']. " akan jatuh tempo pada <b>hari ini</b><br>";
                             }else{
-                                echo $d['nama_barang']. " - " .$day. " sudah <b>lewat</b> " . abs($d['selisih']) ." hari<br>";
+                                echo $d['nama_barang']. " sudah <b>lewat</b> " . abs($d['selisih']) ." hari<br>";
                             }
                         }
                     ?>
