@@ -19,7 +19,7 @@
                             $day = date('l', $timestamp);
                             $jumat = $d['selisih'] - 1;
                             $senin = $d['selisih'] + 1;
-                            if($day == "Wednesday"){
+                            if($day == "Saturday"){
                                 if ($jumat == 0) {
                                     echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
