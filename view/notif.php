@@ -17,19 +17,19 @@
                         foreach($data as $d){
                             $timestamp = strtotime($d['jatuh_tempo']);
                             $day = date('l', $timestamp);
-                            $jumat = $d['selisih'] - 1;
-                            $senin = $d['selisih'] + 1;
+                            $sabtu = $d['selisih'] - 1;
+                            $minggu = $d['selisih'] - 2;
                             if($day == "Saturday"){
-                                if ($jumat == 0) {
+                                if ($sabtu == 0) {
                                     echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $jumat ." hari lagi<br>";
+                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $sabtu ." hari lagi<br>";
                                 }
                             }elseif($day == "Sunday"){
-                                if ($senin == 0) {
+                                if ($minggu == 0) {
                                     echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $senin ." hari lagi<br>";
+                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $minggu ." hari lagi<br>";
                                 }
                             }elseif($d['selisih'] >= 1){
                                 echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $d['selisih'] ." hari lagi<br>";
