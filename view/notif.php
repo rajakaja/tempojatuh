@@ -23,7 +23,7 @@
                                 if ($jumat == 0) {
                                     echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada <b>hari ini</b><br>";
                                 } else {
-                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $day ." hari lagi<br>";
+                                    echo $d['nama_barang']. " - " .$day. " akan jatuh tempo pada " . $jumat ." hari lagi<br>";
                                 }
                             }elseif($day == "Sunday"){
                                 if ($senin == 0) {
